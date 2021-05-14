@@ -148,6 +148,10 @@ body {
     box-sizing: border-box;
   }
 
+  .slider__photo {
+    min-width: 540px;
+  }
+
   .slider__testimonials {
     position: relative;
     top: -25px;
