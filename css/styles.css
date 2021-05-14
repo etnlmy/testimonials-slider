@@ -27,6 +27,8 @@ body {
   padding: 30px 37px 18px 37px;
   background: url(../images/pattern-bg.svg) 0px 0px no-repeat;
   background-size: contain;
+  max-width: 540px;
+  margin: auto;
 }
 
 .slider__controls {
