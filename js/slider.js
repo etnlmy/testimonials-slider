@@ -19,12 +19,21 @@ function slider({ photoClassName, testimonyClassName }) {
   const testimonies = document.querySelectorAll(`.${testimonyClassName}`);
   var currentIndex = 0;
 
-  document
-    .getElementById("btn-next")
-    .addEventListener(CLICK, () => moveToItem("next"));
-  document
-    .getElementById("btn-prev")
-    .addEventListener(CLICK, () => moveToItem("prev"));
+  const buttonNext = document.getElementById("btn-next");
+  const buttonPrev = document.getElementById("btn-prev");
+
+  buttonNext.addEventListener(CLICK, () => moveToItem("next"));
+  buttonPrev.addEventListener(CLICK, () => moveToItem("prev"));
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") buttonPrev.click();
+    else if (e.key === "ArrowRight") buttonNext.click();
+  });
+
+  addSwipeListeners({
+    onSwipeRight: () => buttonPrev.click(),
+    onSwipeLeft: () => buttonNext.click(),
+  });
 }
 
 slider({
