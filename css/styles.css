@@ -128,7 +128,8 @@ body {
   }
 
   .slider {
-    margin: 0;
+    margin: auto;
+    max-width: 1200px;
     padding: 50px 73px 92px 165px;
     display: flex;
     align-items: center;
