@@ -1,0 +1,118 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-blue: hsl(240, 38%, 20%);
+  --grayish-blue: hsl(240, 18%, 77%);
+  --shadow-color: hsl(240, 52%, 29%);
+  --transition-curve: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  background: url(../images/pattern-curve.svg) left bottom no-repeat;
+  padding: 24px 24px 75px 24px;
+  background-size: 285px 72px;
+}
+
+.slider {
+  min-width: 227px;
+}
+
+.slider__photo-slider {
+  padding: 30px 37px 18px 37px;
+  background: url(../images/pattern-bg.svg) 0px 0px no-repeat;
+  background-size: contain;
+}
+
+.slider__controls {
+  width: 80px;
+  height: 40px;
+  margin: auto;
+  display: flex;
+  transform: translateY(-50%);
+}
+
+.slider__button {
+  width: 100%;
+  border: none;
+}
+
+.slider__button:first-child {
+  border-radius: 28px 0 0 28px;
+}
+
+.slider__button:last-child {
+  border-radius: 0 28px 28px 0;
+}
+
+.slider__button img {
+  width: 10px;
+  height: 14px;
+}
+
+.slider__photo-container {
+  display: flex;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 40px 50px -30px var(--shadow-color); 
+  box-shadow: 0px 40px 50px -30px var(--shadow-color);
+  overflow: hidden;
+}
+
+.slider__photo {
+  display: block;
+  width: 100%;
+  transform: translateX(0);
+  transition: all .5s var(--transition-curve);
+}
+
+.slider__photo--active {
+  visibility: visible;
+}
+
+.slider__testimonials {
+  height: 203px;
+  position: relative;
+  padding: 25px 8px 0 8px;
+  background: url("../images/pattern-quotes.svg") top center no-repeat;
+  background-size: 60px 50px;
+}
+
+.slider__testimony {
+  position: absolute;
+  top: 25;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 1s var(--transition-curve);
+  transition: opacity 1s var(--transition-curve);
+}
+
+.slider__testimony--active {
+  opacity: 1;
+}
+
+.slider__quote {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--dark-blue);
+  margin-bottom: 19px;
+}
+
+.slider__author {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--dark-blue);
+}
+
+.slider__role {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--grayish-blue);
+}
